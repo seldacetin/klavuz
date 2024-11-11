@@ -675,8 +675,6 @@
     </head>
     <body class="layout-boxed">
         <div class="page">
-            <div class="menu-icon"></div>
-            <div class="nav-links"></div>
             <div id="navbar"></div>
             <div class="page-wrapper">
                 <div class="page-body">
@@ -865,21 +863,6 @@
         <script src="./static/js/apexcharts.min.js" defer=""></script>
         <script src="./static/js/tabler.min.js" defer=""></script>
         <script src="./static/js/demo.min.js" defer=""></script>
-        <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const menuIcon = document.querySelector('.menu-icon');
-            const navLinks = document.querySelector('.nav-links');
-
-            if (menuIcon && navLinks) {
-            menuIcon.addEventListener('click', function() {
-                this.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-            } else {
-            console.error(".menu-icon veya .nav-links bulunamadı.");
-            }
-        });
-        </script>
         <script>
             const team_data1 = [
                 {name: 'Furkan Suzan', email: 'furkan.suzan@t2ic.com', phone: '0542 699 63 62'},
