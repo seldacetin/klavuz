@@ -6,7 +6,7 @@ const NAVBAR = `
     <div class="container-xl">
         <a href="index.html" class="navbar-brand ps-2 fs-4 fw-bolder">
             <img src="./static/img/1.jpg" width="110" height="auto" alt="" class="navbar-brand-image">
-            <i>ERİŞİM REJİMİ DEPARTMANI</i>
+            <i style="margin-left:10px;">ERİŞİM REJİMİ DEPARTMANI</i>
         </a>
     </div>
 </nav>
