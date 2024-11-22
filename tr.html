@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatiple" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <title>GUIDEBOOK</title>
+        <link href="./static/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body{
+                background: #001f33 linear-gradient(to right,rgba(255,255,255,.1),transparent) fixed;
+            }
+
+            .baslik{
+                color: #e6f5ff;
+                font-family: "Trebuchet MS", Helvetica, sans-serif;
+                font-weight:bolder;
+            }
+
+            img{
+                width: auto;
+                max-width: 100%;
+            }
+            .no-icon::after {
+                content: none;
+            }
+            @media (max-width: 768px) {
+                .col-md-1 img {
+                    display: none;
+                }
+            }
+
+        </style>
+    </head>
+<body>
+    <div class="container my-md-4 bd-layout">
+        <div class="bd-intro ps-md-4 row" style="margin-top: 8%; margin-bottom: 5%">
+            <div class="col-md-1">
+                <img src="./static/img/1.png" alt="logo" style="margin-left: -25px;">
+            </div>
+            <div class="col-md-10">
+                <div class="baslik text-center">
+                    <h4 class="fst-italic">GÜVENLİK DİREKTÖRLÜĞÜ</h4>
+                    <h2>ERİŞİM REJİMİ DEPARTMANI SİSTEMİ</h2>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <img src="./static/img/1.png" alt="logo">
+            </div>
+        </div>
+        <div class="accordion" id="mainAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="tab">
+                    <button class="accordion-button collapsed fs-5 fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Yeni Personel
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" role="tab" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="accordionPersonel">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTurk">
+                                    <button class="accordion-button collapsed fs-6 fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTurk" aria-expanded="false" aria-controls="collapseTurk">
+                                        Türk Personel
+                                    </button>
+                                </h2>
+                                <div id="collapseTurk" class="accordion-collapse collapse" aria-labelledby="headingTurk" data-bs-parent="#accordionPersonel">
+                                    <div class="accordion-body">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingBakanlik">
+                                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='tBakanlik.html'">Bakanlık Evrakları</button>
+                                            </h2>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingBakanlik">
+                                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='tgiris.html'">Giriş Evrakları</button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingYabanci">
+                                    <button class="accordion-button collapsed fs-6 fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapseYabanci" aria-expanded="false" aria-controls="collapseYabanci">
+                                        Yabancı Personel
+                                    </button>
+                                </h2>
+                                <div id="collapseYabanci" class="accordion-collapse collapse" aria-labelledby="headingYabanci" data-bs-parent="#accordionPersonel">
+                                    <div class="accordion-body">
+                                        <div class="accordion" id="accordionYabanci">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingBakanlik">
+                                                    <button class="accordion-button collapsed fs-6 fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBakanlik" aria-expanded="false" aria-controls="collapseBakanlik">
+                                                        Bakanlık Evrakları
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseBakanlik" class="accordion-collapse collapse" aria-labelledby="headingBakanlik" data-bs-parent="#accordionYabanci">
+                                                    <div class="accordion-body">
+                                                        <div class="accordion" id="accordionBakanlik">
+                                                            <div class="accordion-item">
+                                                                <h2 class="accordion-header" id="headingBakanlik1">
+                                                                    <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='rusbelarus.html'">Rus-Belarus Vatandaşları</button>
+                                                                </h2>
+                                                            </div>
+                                                            <div class="accordion-item">
+                                                                <h2 class="accordion-header" id="headingBakanlik2">
+                                                                    <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='cisulkeler.html'">CIS Ülkeleri</button>
+                                                                </h2>
+                                                            </div>
+                                                            <div class="accordion-item">
+                                                                <h2 class="accordion-header" id="headingBakanlik3">
+                                                                    <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='digerulkeler.html'">Diğer Ülkeler</button>
+                                                                </h2>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingBakanlik">
+                                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='ygiris.html'">Giriş Evrakları</button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed fs-5 fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Personel Kart İşlemleri
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo1">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='kyenileme.html'">Kart Yenileme</button>
+                            </h2>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo2">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='kiptal.html'">Kart İptal</button>
+                            </h2>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo3">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='ksureuzatma.html'">Kart Süresi Uzatma</button>
+                            </h2>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo4">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='90gunbloke.html'">90 Gün Bloke Kaldırma</button>
+                            </h2>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo5">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='vatandaslikdegisim.html'">Vatandaşlık Değişimi</button>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed fs-5 fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Araç Kart İşlemleri
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree1">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='mektupbasvuru.html'">Mektup Başvuru</button>
+                            </h2>
+                        </div>
+                        <div class="accordion" id="accordionArac">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingAracBasvuru">
+                                    <button class="accordion-button collapsed fs-6 fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAracBasvuru" aria-expanded="false" aria-controls="collapseAracBasvuru">
+                                        Araç Kart Başvuru
+                                    </button>
+                                </h2>
+                                <div id="collapseAracBasvuru" class="accordion-collapse collapse" aria-labelledby="headingAracBasvuru" data-bs-parent="#accordionArac">
+                                    <div class="accordion-body">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingAracBasvuru1">
+                                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='aracyenibasvuru.html'">Yeni Başvuru</button>
+                                            </h2>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingAracBasvuru1">
+                                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='sofordegisikligi.html'">Şoför Değişikliği</button>
+                                            </h2>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingAracBasvuru1">
+                                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='arackirikkart.html'">Kırık Yıpranmış Arızalı Kart Başvurusu</button>
+                                            </h2>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingAracBasvuru1">
+                                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='arackayipkart.html'">Kayıp Kart Başvurusu</button>
+                                            </h2>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingAracBasvuru1">
+                                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='aracfirmadegisim.html'">Firma Değişimi</button>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree2">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='arackartsuresiuzatma.html'">Kart Süresi Uzatma</button>
+                            </h2>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree3">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='90gunblokearac.html'">90 Gün Bloke Kaldırma</button>
+                            </h2>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree4">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='akiptal.html'">Kart İptali</button>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed fs-5 fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Malzeme Giriş Çıkış İşlemleri
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour1">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='malzeme.html'">Malzeme Giriş Çıkış</button>
+                            </h2>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour2">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='degerlimalzeme.html'">Değerli Malzeme</button>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed fs-5 fw-bolder no-icon" type="button" onclick="window.location.href='aciltir.html'">Acil Tır Araç</button>
+                </h2>
+            </div>
+        
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed fs-5 fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Jeton İşlemleri
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSix1">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='aylikJeton.html'">1 Aylık Jeton</button>
+                            </h2>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSix2">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='yillikJeton.html'">1 Yıllık Jeton</button>
+                            </h2>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSix3">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='jetoniptali.html'">Jeton İptali</button>
+                            </h2>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSix4">
+                                <button class="accordion-button collapsed fs-6 fw-bolder no-icon" type="button" onclick="window.location.href='kayipjeton.html'">Kayıp Jeton İptali</button>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button collapsed fs-5 fw-bolder no-icon" type="button" onclick="window.location.href='teslimnoktalari.html'">Teslim Noktaları</button>
+                </h2>
+            </div>
+        </div>
+          
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  
+</body>
+</html>

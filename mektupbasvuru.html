@@ -846,5 +846,23 @@
                 });
             });
         </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const accordionItems = document.querySelectorAll('.accordion-collapse');
+                
+                accordionItems.forEach(item => {
+                    item.addEventListener('shown.bs.collapse', function () {
+                        setTimeout(() => {
+                            this.closest('.accordion-item')
+                                .querySelector('.accordion-header')
+                                .scrollIntoView({
+                                    behavior: 'smooth', 
+                                    block: 'start'
+                                });
+                        }, 100);
+                    });
+                });
+            });
+        </script>
     </body>
 </html>

@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatiple" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <title>Заявка на письмо</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-flags.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-payments.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-vendors.min.css">   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="./static/css/nav.css">
+        <script src="./static/js/rloadnavbar.js" defer></script>
+        <script src="./static/js/rfooter.js"></script>
+        <style>
+            @import url('https://rsms.me/inter/inter.css');
+            :root {
+                --tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+            }
+            body {
+                -webkit-font-smoothing: antialiased; /* For WebKit-based browsers (Chrome, Safari) */
+                -moz-osx-font-smoothing: grayscale; /* For macOS browsers (Firefox) */
+                font-feature-settings: "cv03", "cv04", "cv11";
+            }
+            .nav-link-icon {
+                color: #314a68;
+            }
+        </style>
+        <style id="apexcharts-css">@keyframes opaque {
+            0% {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+            }
+
+            @keyframes resizeanim {
+            0%,to {
+                opacity: 0
+            }
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+              }
+              
+              @media (max-width: 600px) {
+            
+                .container {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+              }
+
+            body {
+                font-size: 16px;
+              }
+              
+            @media (max-width: 768px) {
+                body {
+                  font-size: 14px;
+                }
+              }
+              
+            @media (max-width: 480px) {
+                body {
+                  font-size: 12px;
+                }
+              }
+            
+              .nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              }
+              
+              .menu-icon {
+                display: none;
+              }
+              
+              @media (max-width: 768px) {
+                .menu-icon {
+                  display: block;
+                }
+              
+                .nav-links {
+                  display: none;
+                  flex-direction: column;
+                }
+              
+                .menu-icon.active + .nav-links {
+                  display: flex;
+                }
+              }
+            
+              h1 {
+                font-size: 5vw;
+              }
+            
+            .apexcharts-canvas {
+            position: relative;
+            user-select: none
+            }
+
+            .apexcharts-canvas ::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 6px
+            }
+
+            .apexcharts-canvas ::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: rgba(0,0,0,.5);
+            box-shadow: 0 0 1px rgba(255,255,255,.5);
+            -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5)
+            }
+
+            .apexcharts-inner {
+            position: relative
+            }
+
+            .apexcharts-text tspan {
+            font-family: inherit
+            }
+
+            .legend-mouseover-inactive {
+            transition: .15s ease all;
+            opacity: .2
+            }
+
+            .apexcharts-legend-text {
+            padding-left: 15px;
+            margin-left: -15px;
+            }
+
+            .apexcharts-series-collapsed {
+            opacity: 0
+            }
+
+            .apexcharts-tooltip {
+            border-radius: 5px;
+            box-shadow: 2px 2px 6px -4px #999;
+            cursor: default;
+            font-size: 14px;
+            left: 62px;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            white-space: nowrap;
+            z-index: 12;
+            transition: .15s ease all
+            }
+
+            .apexcharts-tooltip.apexcharts-active {
+            opacity: 1;
+            transition: .15s ease all
+            }
+
+            .apexcharts-tooltip.apexcharts-theme-light {
+            border: 1px solid #e3e3e3;
+            background: rgba(255,255,255,.96)
+            }
+
+            .apexcharts-tooltip.apexcharts-theme-dark {
+            color: #fff;
+            background: rgba(30,30,30,.8)
+            }
+
+            .apexcharts-tooltip * {
+            font-family: inherit
+            }
+
+            .apexcharts-tooltip-title {
+            padding: 6px;
+            font-size: 15px;
+            margin-bottom: 4px
+            }
+
+            .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+            background: #eceff1;
+            border-bottom: 1px solid #ddd
+            }
+
+            .apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-title {
+            background: rgba(0,0,0,.7);
+            border-bottom: 1px solid #333
+            }
+
+            .apexcharts-tooltip-text-goals-value,.apexcharts-tooltip-text-y-value,.apexcharts-tooltip-text-z-value {
+            display: inline-block;
+            margin-left: 5px;
+            font-weight: 600
+            }
+
+            .apexcharts-tooltip-text-goals-label:empty,.apexcharts-tooltip-text-goals-value:empty,.apexcharts-tooltip-text-y-label:empty,.apexcharts-tooltip-text-y-value:empty,.apexcharts-tooltip-text-z-value:empty,.apexcharts-tooltip-title:empty {
+            display: none
+            }
+
+            .apexcharts-tooltip-text-goals-label,.apexcharts-tooltip-text-goals-value {
+            padding: 6px 0 5px
+            }
+
+            .apexcharts-tooltip-goals-group,.apexcharts-tooltip-text-goals-label,.apexcharts-tooltip-text-goals-value {
+            display: flex
+            }
+
+            .apexcharts-tooltip-text-goals-label:not(:empty),.apexcharts-tooltip-text-goals-value:not(:empty) {
+            margin-top: -6px
+            }
+
+            .apexcharts-tooltip-marker {
+            width: 12px;
+            height: 12px;
+            position: relative;
+            top: 0;
+            margin-right: 10px;
+            border-radius: 50%
+            }
+
+            .apexcharts-tooltip-series-group {
+            padding: 0 10px;
+            display: none;
+            text-align: left;
+            justify-content: left;
+            align-items: center
+            }
+
+            .apexcharts-tooltip-series-group.apexcharts-active .apexcharts-tooltip-marker {
+            opacity: 1
+            }
+
+            .apexcharts-tooltip-series-group.apexcharts-active,.apexcharts-tooltip-series-group:last-child {
+            padding-bottom: 4px
+            }
+
+            .apexcharts-tooltip-series-group-hidden {
+            opacity: 0;
+            height: 0;
+            line-height: 0;
+            padding: 0!important
+            }
+
+            .apexcharts-tooltip-y-group {
+            padding: 6px 0 5px
+            }
+
+            .apexcharts-custom-tooltip,.apexcharts-tooltip-box {
+            padding: 4px 8px
+            }
+
+            .apexcharts-tooltip-boxPlot {
+            display: flex;
+            flex-direction: column-reverse
+            }
+
+            .apexcharts-tooltip-box>div {
+            margin: 4px 0
+            }
+
+            .apexcharts-tooltip-box span.value {
+            font-weight: 700
+            }
+
+            .apexcharts-tooltip-rangebar {
+            padding: 5px 8px
+            }
+
+            .apexcharts-tooltip-rangebar .category {
+            font-weight: 600;
+            color: #777
+            }
+
+            .apexcharts-tooltip-rangebar .series-name {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px
+            }
+
+            .apexcharts-xaxistooltip,.apexcharts-yaxistooltip {
+            opacity: 0;
+            pointer-events: none;
+            color: #373d3f;
+            font-size: 13px;
+            text-align: center;
+            border-radius: 2px;
+            position: absolute;
+            z-index: 10;
+            background: #eceff1;
+            border: 1px solid #90a4ae
+            }
+
+            .apexcharts-xaxistooltip {
+            padding: 9px 10px;
+            transition: .15s ease all
+            }
+
+            .apexcharts-xaxistooltip.apexcharts-theme-dark {
+            background: rgba(0,0,0,.7);
+            border: 1px solid rgba(0,0,0,.5);
+            color: #fff
+            }
+
+            .apexcharts-xaxistooltip:after,.apexcharts-xaxistooltip:before {
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none
+            }
+
+            .apexcharts-xaxistooltip:after {
+            border-color: transparent;
+            border-width: 6px;
+            margin-left: -6px
+            }
+
+            .apexcharts-xaxistooltip:before {
+            border-color: transparent;
+            border-width: 7px;
+            margin-left: -7px
+            }
+
+            .apexcharts-xaxistooltip-bottom:after,.apexcharts-xaxistooltip-bottom:before {
+            bottom: 100%
+            }
+
+            .apexcharts-xaxistooltip-top:after,.apexcharts-xaxistooltip-top:before {
+            top: 100%
+            }
+
+            .apexcharts-xaxistooltip-bottom:after {
+            border-bottom-color: #eceff1
+            }
+
+            .apexcharts-xaxistooltip-bottom:before {
+            border-bottom-color: #90a4ae
+            }
+
+            .apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:after,.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:before {
+            border-bottom-color: rgba(0,0,0,.5)
+            }
+
+            .apexcharts-xaxistooltip-top:after {
+            border-top-color: #eceff1
+            }
+
+            .apexcharts-xaxistooltip-top:before {
+            border-top-color: #90a4ae
+            }
+
+            .apexcharts-xaxistooltip-top.apexcharts-theme-dark:after,.apexcharts-xaxistooltip-top.apexcharts-theme-dark:before {
+            border-top-color: rgba(0,0,0,.5)
+            }
+
+            .apexcharts-xaxistooltip.apexcharts-active {
+            opacity: 1;
+            transition: .15s ease all
+            }
+
+            .apexcharts-yaxistooltip {
+            padding: 4px 10px
+            }
+
+            .apexcharts-yaxistooltip.apexcharts-theme-dark {
+            background: rgba(0,0,0,.7);
+            border: 1px solid rgba(0,0,0,.5);
+            color: #fff
+            }
+
+            .apexcharts-yaxistooltip:after,.apexcharts-yaxistooltip:before {
+            top: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none
+            }
+
+            .apexcharts-yaxistooltip:after {
+            border-color: transparent;
+            border-width: 6px;
+            margin-top: -6px
+            }
+
+            .apexcharts-yaxistooltip:before {
+            border-color: transparent;
+            border-width: 7px;
+            margin-top: -7px
+            }
+
+            .apexcharts-yaxistooltip-left:after,.apexcharts-yaxistooltip-left:before {
+            left: 100%
+            }
+
+            .apexcharts-yaxistooltip-right:after,.apexcharts-yaxistooltip-right:before {
+            right: 100%
+            }
+
+            .apexcharts-yaxistooltip-left:after {
+            border-left-color: #eceff1
+            }
+
+            .apexcharts-yaxistooltip-left:before {
+            border-left-color: #90a4ae
+            }
+
+            .apexcharts-yaxistooltip-left.apexcharts-theme-dark:after,.apexcharts-yaxistooltip-left.apexcharts-theme-dark:before {
+            border-left-color: rgba(0,0,0,.5)
+            }
+
+            .apexcharts-yaxistooltip-right:after {
+            border-right-color: #eceff1
+            }
+
+            .apexcharts-yaxistooltip-right:before {
+            border-right-color: #90a4ae
+            }
+
+            .apexcharts-yaxistooltip-right.apexcharts-theme-dark:after,.apexcharts-yaxistooltip-right.apexcharts-theme-dark:before {
+            border-right-color: rgba(0,0,0,.5)
+            }
+
+            .apexcharts-yaxistooltip.apexcharts-active {
+            opacity: 1
+            }
+
+            .apexcharts-yaxistooltip-hidden {
+            display: none
+            }
+
+            .apexcharts-xcrosshairs,.apexcharts-ycrosshairs {
+            pointer-events: none;
+            opacity: 0;
+            transition: .15s ease all
+            }
+
+            .apexcharts-xcrosshairs.apexcharts-active,.apexcharts-ycrosshairs.apexcharts-active {
+            opacity: 1;
+            transition: .15s ease all
+            }
+
+            .apexcharts-ycrosshairs-hidden {
+            opacity: 0
+            }
+
+            .apexcharts-selection-rect {
+            cursor: move
+            }
+
+            .svg_select_boundingRect,.svg_select_points_rot {
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden
+            }
+
+            .apexcharts-selection-rect+g .svg_select_boundingRect,.apexcharts-selection-rect+g .svg_select_points_rot {
+            opacity: 0;
+            visibility: hidden
+            }
+
+            .apexcharts-selection-rect+g .svg_select_points_l,.apexcharts-selection-rect+g .svg_select_points_r {
+            cursor: ew-resize;
+            opacity: 1;
+            visibility: visible
+            }
+
+            .svg_select_points {
+            fill: #efefef;
+            stroke: #333;
+            
+            }
+
+            .apexcharts-svg.apexcharts-zoomable.hovering-zoom {
+            cursor: crosshair
+            }
+
+            .apexcharts-svg.apexcharts-zoomable.hovering-pan {
+            cursor: move
+            }
+
+            .apexcharts-menu-icon,.apexcharts-pan-icon,.apexcharts-reset-icon,.apexcharts-selection-icon,.apexcharts-toolbar-custom-icon,.apexcharts-zoom-icon,.apexcharts-zoomin-icon,.apexcharts-zoomout-icon {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            line-height: 24px;
+            color: #6e8192;
+            text-align: center
+            }
+
+            .apexcharts-menu-icon svg,.apexcharts-reset-icon svg,.apexcharts-zoom-icon svg,.apexcharts-zoomin-icon svg,.apexcharts-zoomout-icon svg {
+            fill: #6e8192
+            }
+
+            .apexcharts-selection-icon svg {
+            fill: #444;
+            transform: scale(.76)
+            }
+
+            .apexcharts-theme-dark .apexcharts-menu-icon svg,.apexcharts-theme-dark .apexcharts-pan-icon svg,.apexcharts-theme-dark .apexcharts-reset-icon svg,.apexcharts-theme-dark .apexcharts-selection-icon svg,.apexcharts-theme-dark .apexcharts-toolbar-custom-icon svg,.apexcharts-theme-dark .apexcharts-zoom-icon svg,.apexcharts-theme-dark .apexcharts-zoomin-icon svg,.apexcharts-theme-dark .apexcharts-zoomout-icon svg {
+            fill: #f3f4f5
+            }
+
+            .apexcharts-canvas .apexcharts-reset-zoom-icon.apexcharts-selected svg,.apexcharts-canvas .apexcharts-selection-icon.apexcharts-selected svg,.apexcharts-canvas .apexcharts-zoom-icon.apexcharts-selected svg {
+            fill: #008ffb
+            }
+
+            .apexcharts-theme-light .apexcharts-menu-icon:hover svg,.apexcharts-theme-light .apexcharts-reset-icon:hover svg,.apexcharts-theme-light .apexcharts-selection-icon:not(.apexcharts-selected):hover svg,.apexcharts-theme-light .apexcharts-zoom-icon:not(.apexcharts-selected):hover svg,.apexcharts-theme-light .apexcharts-zoomin-icon:hover svg,.apexcharts-theme-light .apexcharts-zoomout-icon:hover svg {
+            fill: #333
+            }
+
+            .apexcharts-menu-icon,.apexcharts-selection-icon {
+            position: relative
+            }
+
+            .apexcharts-reset-icon {
+            margin-left: 5px
+            }
+
+            .apexcharts-menu-icon,.apexcharts-reset-icon,.apexcharts-zoom-icon {
+            transform: scale(.85)
+            }
+
+            .apexcharts-zoomin-icon,.apexcharts-zoomout-icon {
+            transform: scale(.7)
+            }
+
+            .apexcharts-zoomout-icon {
+            margin-right: 3px
+            }
+
+            .apexcharts-pan-icon {
+            transform: scale(.62);
+            position: relative;
+            left: 1px;
+            top: 0
+            }
+
+            .apexcharts-pan-icon svg {
+            fill: #fff;
+            stroke: #6e8192;
+            stroke-width: 2
+            }
+
+            .apexcharts-pan-icon.apexcharts-selected svg {
+            stroke: #008ffb
+            }
+
+            .apexcharts-pan-icon:not(.apexcharts-selected):hover svg {
+            stroke: #333
+            }
+
+            .apexcharts-toolbar {
+            position: absolute;
+            z-index: 11;
+            max-width: 176px;
+            text-align: right;
+            border-radius: 3px;
+            padding: 0 6px 2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+            }
+
+            .apexcharts-menu {
+            background: #fff;
+            position: absolute;
+            top: 100%;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 3px;
+            right: 10px;
+            opacity: 0;
+            min-width: 110px;
+            transition: .15s ease all;
+            pointer-events: none
+            }
+
+            .apexcharts-menu.apexcharts-menu-open {
+            opacity: 1;
+            pointer-events: all;
+            transition: .15s ease all
+            }
+
+            .apexcharts-menu-item {
+            padding: 6px 7px;
+            font-size: 12px;
+            cursor: pointer
+            }
+
+            .apexcharts-theme-light .apexcharts-menu-item:hover {
+            background: #eee
+            }
+
+            .apexcharts-theme-dark .apexcharts-menu {
+            background: rgba(0,0,0,.7);
+            color: #fff
+            }
+
+            @media screen and (min-width:768px) {
+            .apexcharts-canvas:hover .apexcharts-toolbar {
+                opacity: 1
+            }
+            }
+
+            .apexcharts-canvas .apexcharts-element-hidden,.apexcharts-datalabel.apexcharts-element-hidden,.apexcharts-hide .apexcharts-series-points {
+            opacity: 0
+            }
+
+            .apexcharts-datalabel,.apexcharts-datalabel-label,.apexcharts-datalabel-value,.apexcharts-datalabels,.apexcharts-pie-label {
+            cursor: default;
+            pointer-events: none
+            }
+
+            .apexcharts-pie-label-delay {
+            opacity: 0;
+            animation-name: opaque;
+            animation-duration: .3s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease
+            }
+
+            .apexcharts-annotation-rect,.apexcharts-area-series .apexcharts-area,.apexcharts-area-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,.apexcharts-gridline,.apexcharts-line,.apexcharts-line-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,.apexcharts-point-annotation-label,.apexcharts-radar-series path,.apexcharts-radar-series polygon,.apexcharts-toolbar svg,.apexcharts-tooltip .apexcharts-marker,.apexcharts-xaxis-annotation-label,.apexcharts-yaxis-annotation-label,.apexcharts-zoom-rect {
+            pointer-events: none
+            }
+
+            .apexcharts-marker {
+            transition: .15s ease all
+            }
+
+            .resize-triggers {
+            animation: 1ms resizeanim;
+            visibility: hidden;
+            opacity: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden
+            }
+
+            .contract-trigger:before,.resize-triggers,.resize-triggers>div {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0
+            }
+
+            .resize-triggers>div {
+            height: 100%;
+            width: 100%;
+            background: #eee;
+            overflow: auto
+            }
+
+            .contract-trigger:before {
+            overflow: hidden;
+            width: 200%;
+            height: 200%
+            }
+        </style>
+    </head>
+    <body class="layout-boxed">
+        <div class="page">
+            <div id="rnavbar"></div>
+            <div class="page-wrapper">
+                <div class="page-body">
+                    <div class="container-xl">
+                        <div class="row row-cards">
+                            <div class="space-y-4">
+                                <i class="mb-3 mt-3 fw-bold fs-3 ps-2">Заявка на письмо</i>
+                                    <div id="faq-1" class="accordion" role="tablist" aria-multiselectable="true">
+                                        <div class="accordion-item">
+                                            <p class="ps-3"><br>
+                                                <b>Шаги и документы, необходимые для подачи заявки на пропуск в зону Akkuyu NGS</b><br>
+                                                Для того чтобы успешно подать заявку на пропуск в зону Akkuyu NGS, персонал должен следовать определенным шагам и предоставить документы, указанные ниже. 
+                                                Заявки с неполной информацией или документами не будут рассмотрены.<br><br>
+                                                <b>1. Подготовка письма-заявки</b><br>
+                                                Перед подачей заявки подготовьте письмо, адресованное директору по безопасности T2-IC JV Артему Зародышу и со-директору Селиму Темрену. 
+                                                В письме подробно укажите информацию о вашем персонале и транспортных средствах, а также укажите следующие данные:<br>
+                                                &nbsp&nbsp&nbsp • Укажите количество сотрудников, разделив их на белые и синие воротнички.<br>
+                                                &nbsp&nbsp&nbsp • Разделите информацию о транспортных средствах на белые и желтые карты, укажите данные о легковых автомобилях, фургонах и служебных автомобилях.<br><br>
+                                                Отправьте подготовленное письмо на адрес <a href="">office@t2ic.com</a> и добавьте в поле Cc адреса <a href="">gonenc.caynak@t2ic.com</a> и <a href="">rifat.kucuk@t2ic.com</a>.<br><br>
+                                                <b>2. Документы для подачи заявки</b><br>
+                                                Для подачи заявки необходимо предоставить следующие документы в полном объеме:<br>
+                                                &nbsp&nbsp&nbsp • <b>Регистрационное удостоверение автомобиля:</b> Копия регистрационного удостоверения каждого транспортного средства<br>
+                                                &nbsp&nbsp&nbsp • <b>Форма письма для автомобиля:</b> Заполненная в формате Excel форма, заверенная печатью и подписью компании.<br>
+                                                &nbsp&nbsp&nbsp • <b>Двуязычное письмо-заявка:</b> Письмо на русском и турецком языках в формате PDF<br>
+                                                &nbsp&nbsp&nbsp • <b>Фотографии автомобилей:</b> Фотографии автомобиля с четырех сторон<br><br>
+                                                <b>3. Типы пропусков и условия их использования</b><br>
+                                                На территории Akkuyu NGS используются два типа электронных пропусков для легковых автомобилей:<br>
+                                                &nbsp&nbsp&nbsp • <b>Белый электронный пропуск:</b> Пропуск, который позволяет осуществлять вход и выход 24/7.<br>
+                                                &nbsp&nbsp&nbsp • <b>Желтый электронный пропуск:</b> Пропуск с ограниченными часами входа и выхода.<br>
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp - <b>Часы входа и выхода:</b> Использование разрешено только с 06:00 до 10:00 и с 16:00 до 20:00.<br>
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp - <b>Для транспортных средств, перевозящих грузы, выдается только желтый пропуск; белый пропуск не выдается.</b><br><br>
+                                                <b>4. Требования к должности для подачи заявки</b><br>
+                                                Персонал, подающий заявку, должен занимать должность не ниже руководителя отдела или начальника участка (с указанием названия участка) или более высокую должность. 
+                                                Заявки сотрудников с более низкими должностями рассматриваться не будут.<br><br>
+                                                <u style="color: red;"><b>ВАЖНО:</b></u> Вход и выход транспортных средств с желтым пропуском вне указанных часов строго запрещены.
+                                            </p>                                            
+                                        </div>
+                                        <div class="accordion-item">
+                                            <div class="accordion-header" role="tab">
+                                                <button class="accordion-button fs-3 collapsed fw-bolder" data-bs-toggle="collapse" data-bs-target="#faq-1-1" aria-expanded="true">Письмо</button>
+                                            </div>
+                                            <div id="faq-1-1" class="accordion-collapse collapse" role="tabpanel" data-bs-parent="#faq-1">
+                                                <div class="accordion-body pt-0">
+                                                    <div style="display: flex;">
+                                                        <p class="ps-4 mt-4">
+                                                            <img src="./static/img/ornekmektup.png">
+                                                            <br><br><b>Требования к письму-заявке</b><br>
+                                                                Для подачи заявки на пропуск в зону Akkuyu NGS подготовленное письмо должно соответствовать следующим требованиям. 
+                                                                Заявки с неполной или ошибочной информацией не будут рассмотрены и будут возвращены.<br><br>
+                                                                <b>1. Информация о компании и данные о персонале</b><br>
+                                                                &nbsp&nbsp&nbsp • Количество сотрудников: следует указать количество белых и синих воротничков отдельно.<br>
+                                                                &nbsp&nbsp&nbsp • Количество транспортных средств: необходимо указать количество легковых автомобилей, фургонов и служебных автомобилей, разделив их на белые и желтые карты.<br><br>
+                                                                <b>2. Основания для заявки</b><br>
+                                                                &nbsp&nbsp&nbsp • Если требуется белый электронный пропуск, необходимо указать причину и обоснование необходимости прохода для транспортных средств с желтым пропуском в запрещенные часы.<br>
+                                                                &nbsp&nbsp&nbsp • Заявки, не поясняющие необходимость прохождения в часы пик или не обосновывающие причину, рассматриваться не будут.<br><br>
+                                                                <b>3. Требования к языкам</b><br>
+                                                                &nbsp&nbsp&nbsp • Письмо должно быть переведено на русский и турецкий языки без ошибок.<br><br>
+                                                                <b>Процесс обработки</b><br>
+                                                                Заявки будут рассмотрены в конце месяца.<br>
+                                                                Процесс утверждения: Утверждение будет осуществляться в первой половине следующего месяца генеральным директором строительства NGS компании Akkuyu Nuclear S. Butskikh.<br><br>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                        <div class="accordion-item">
+                                            <div class="accordion-header" role="tab">
+                                                <button class="accordion-button fs-3 collapsed fw-bolder" data-bs-toggle="collapse" data-bs-target="#faq-1-2" aria-expanded="false">Форма письма для транспортных средств</button>
+                                            </div>
+                                            <div id="faq-1-2" class="accordion-collapse collapse" role="tabpanel" data-bs-parent="#faq-1">
+                                                <div class="accordion-body pt-0">
+                                                    <p>В форме письма для транспортных средств в колонке "Статус запроса" должен быть выбран один из следующих вариантов:<br>
+                                                        &nbsp&nbsp&nbsp • <b>Новый запрос:</b> Выбирается, если подается первый запрос на пропуск для транспортного средства.<br>
+                                                        &nbsp&nbsp&nbsp • <b>Изменение водителя:</b> Этот вариант используется, если для существующего транспортного средства назначается новый водитель.<br>
+                                                        &nbsp&nbsp&nbsp • <b>Изменение транспортного средства:</b> Выбирается, если требуется заменить зарегистрированное транспортное средство.<br>
+                                                        &nbsp&nbsp&nbsp • <b>Изменение типа карты:</b> Выбирается, если требуется изменить тип карты на белую или желтую.<br>
+                                                        &nbsp&nbsp&nbsp • <b>Неверная заявка:</b> Этот вариант используется для заявок с неполной или неправильной информацией.<br><br>
+                                                        Убедитесь, что вы выбрали правильный вариант, чтобы ваши заявки были обработаны быстро и корректно.<br>
+                                                    </p>
+                                                    <img src="./static/img/17.jpg"><br><br>
+                                                    <p>В колонке "Статус пропуска Akkuyu" должен быть выбран правильный и полный вариант. Это необходимо для правильной оценки заявки. Если выбор не будет сделан, заявка может быть отклонена.</p>
+                                                    <img src="./static/img/18.jpg"><br><br>
+                                                    <p>Выбор типа карты должен быть указан как Электронная Белая или Электронная Желтая. Этот выбор необходим для правильной оценки карты в соответствии с ее назначением и разрешенными часами использования.</p>
+                                                    <img src="./static/img/19.jpg"><br><br>
+                                                    <p>Форма письма для транспортных средств в Excel должна быть заполнена внимательно, как показано в примере, и в соответствии с нижеследующими правилами:<br>
+                                                        <b>1. Должность и ФИО получателя:</b> В поле получателя формы должны быть правильно и полно указаны должность и ФИО соответствующего лица.<br>
+                                                        <b>2. Количество сотрудников:</b> Необходимо указать информацию о персонале на объекте в формате белые воротнички/синие воротнички с точным числом.<br>
+                                                        <b>3. Информация о транспортных средствах:</b> Необходимо правильно и полностью указать марку и номер транспортного средства, для которого запрашивается пропуск.<br>
+                                                    </p>
+                                                    <img src="./static/img/21.jpg"><br><br>
+                                                    <p>В текущей форме письма для транспортных средств <b>необходимо четко указать количество использованных карт</b>. Если имеется несколько белых карт, <b>необходимо указать процентное и числовое увеличение персонала</b> с момента выдачи последней карты. Эта информация обязательна для полного соответствия требованиям заявки.</p>
+                                                    <img src="./static/img/20.jpg"><br><br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <div class="accordion-header" role="tab">
+                                                <button class="accordion-button fs-3 collapsed fw-bolder" data-bs-toggle="collapse" data-bs-target="#faq-1-3" aria-expanded="true">Регистрация транспортного средства</button>
+                                            </div>
+                                            <div id="faq-1-3" class="accordion-collapse collapse" role="tabpanel" data-bs-parent="#faq-1">
+                                                <div class="accordion-body pt-0">
+                                                    <div style="display: flex;">
+                                                        <p class="ps-4"><img src="./static/img/ruhsat.jpg"><br><br>
+                                                        Регистрация транспортного средства должна быть подготовлена в виде читаемого и цветного фото или PDF файла на одной странице. 
+                                                        Документ должен быть четким и понятным, в противном случае процесс подачи заявки может быть затруднен.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <div class="accordion-header" role="tab">
+                                                <button class="accordion-button fs-3 collapsed fw-bolder" data-bs-toggle="collapse" data-bs-target="#faq-1-4" aria-expanded="true">Фотография</button>
+                                            </div>
+                                            <div id="faq-1-4" class="accordion-collapse collapse" role="tabpanel" data-bs-parent="#faq-1">
+                                                <div class="accordion-body pt-0">
+                                                    <div style="display: flex;">
+                                                        <p class="ps-4"><img src="./static/img/aracfoto.png"><br><br>
+                                                         Фото транспортного средства должно быть сделано с четырех сторон с четким и правильным углом. Фотографии должны показывать все детали автомобиля, 
+                                                            чтобы заявка могла быть обработана без проблем.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                            </div>
+                            <div class="col-md-12">
+                                <a id="download-file" href="" download class="btn btn-success w-100 mt-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                                        <polyline points="7 11 12 16 17 11" />
+                                        <line x1="12" y1="4" x2="12" y2="16" />
+                                    </svg>
+                                    Скачать
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rfooter"></div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
+        <script>
+            document.getElementById("download-file").addEventListener("click", function(event) {
+                event.preventDefault();
+                const files = [
+                    './static/data/MEKTUP TASLAĞI-ЧЕРНОВИК ПИСЬМА.docx',
+                    './static/data/ARAC MEKTUP FORMU.xlsm',
+                    './static/data/01-01-03-3720 от 06.02.2023.pdf',
+                ];
+        
+                files.forEach((file, index) => {
+                    setTimeout(() => {
+                        const a = document.createElement("a");
+                        a.href = file;
+                        a.setAttribute("download", file);
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    }, index * 500);
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const accordionItems = document.querySelectorAll('.accordion-collapse');
+                
+                accordionItems.forEach(item => {
+                    item.addEventListener('shown.bs.collapse', function () {
+                        setTimeout(() => {
+                            this.closest('.accordion-item')
+                                .querySelector('.accordion-header')
+                                .scrollIntoView({
+                                    behavior: 'smooth', 
+                                    block: 'start'
+                                });
+                        }, 100);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

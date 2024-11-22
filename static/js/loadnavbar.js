@@ -4,10 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
 const NAVBAR = `
 <nav class="navbar navbar-expand-xl">
     <div class="container-xl">
-        <a href="index.html" class="navbar-brand ps-2 fs-4 fw-bolder">
-            <img src="./static/img/1.jpg" width="110" height="auto" alt="" class="navbar-brand-image">
-            <i style="margin-left:10px;">ERİŞİM REJİMİ DEPARTMANI</i>
-        </a>
+        <div class="col-md-11">
+            <a href="tr.html" class="navbar-brand ps-2 fs-4 fw-bolder">
+                <img src="./static/img/1.jpg" width="110" height="auto" alt="" class="navbar-brand-image">
+                <i style="margin-left:10px;">ERİŞİM REJİMİ DEPARTMANI</i>
+            </a>
+        </div>
+        <div class="col-md-1">
+            <a href="tr.html">
+                <img src="./static/img/tr.png"  id="turkish-flag" style="width: 30px; cursor: pointer;">
+            </a>
+            <a href="rus.html">
+                <img src="./static/img/rus.png" id="russian-flag" style="width: 30px; cursor: pointer;">
+            </a>
+        </div>
     </div>
 </nav>
 <nav class="navbar navbar-expand-xxl" style="background-color: #e6f5ff;">

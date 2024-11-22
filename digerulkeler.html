@@ -923,6 +923,8 @@
                     './static/data/Akkuyu Nükleer Santralinin şantiyesine erişim onayı mektubu Письмо о согласовании доступа на строительную площадку АЭС «Аккую».docx',
                     './static/data/ДЕЙСТВИЯМИ, ЗАПРЕЩЕННЫЕ НА ТЕРРИТОРИИ СТРОИТЕЛЬНОЙ ПЛОЩАДКИ АО «АККУЮ НУ....docx',
                     './static/data/ЗАЯВЛЕНИЕ ОБ ОТКРЫТОМ СОГЛАСИИ.docx',
+                    './static/data/EXPLICIT DECLARATION OF CONSENT REGARDING THE PROCEDURES TO ENTER THE AKKUYU NPP SITE.docx',
+                    './static/data/PROHIBITED OPERATIONS IN CONSTRUCTION SITE.docx',
                 ];
         
                 files.forEach((file, index) => {
@@ -934,6 +936,24 @@
                         a.click();
                         document.body.removeChild(a);
                     }, index * 500);
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const accordionItems = document.querySelectorAll('.accordion-collapse');
+                
+                accordionItems.forEach(item => {
+                    item.addEventListener('shown.bs.collapse', function () {
+                        setTimeout(() => {
+                            this.closest('.accordion-item')
+                                .querySelector('.accordion-header')
+                                .scrollIntoView({
+                                    behavior: 'smooth', 
+                                    block: 'start'
+                                });
+                        }, 100);
+                    });
                 });
             });
         </script>
